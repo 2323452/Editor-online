@@ -1,0 +1,156 @@
+<!doctype html> 
+<html>
+<head>
+<title>Онлайн редактор</title>    
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Онлайн редактор v0.0.1">
+<meta name="keywords" content="html, CSS, javascript, онлайн-редактор">
+<link rel="icon" href="https://emoji.discord.st/emojis/a8e0e4a2-2fd9-4654-a677-8e0b02999195.gif" type="image/x-icon">
+<link rel="stylesheet" href="docs.css">
+<link rel="stylesheet" href="fontello.css"> 
+<script src="litehighlighting.js"></script>
+<script src="jsbartags.js" type="text/javascript"></script>
+</head>
+<body>   
+    <header>    
+        <div class="headerBox">        
+            <div class="centerHeader cclearfix"> 
+            <!-- див справ вверху реклама -->
+			<!-- реклама под верх меню -->
+<style type="text/css">
+@media screen and (max-width: 700px){
+#top-reklam {
+    height: 100px;
+}}
+</style>
+<div id='top-reklam' style="height: 110px;">
+<style type="text/css">
+#mainContainer {top: 152px;}
+@media screen and (max-width: 800px){#mainContainer {top: 143px;}}
+.adslot_1 { width: 320px; height: 100px; }
+@media (min-width:500px) { .adslot_1 { width: 468px; height: 70px; } }
+@media (min-width:800px) { .adslot_1 { width: 728px; height: 90px; } }
+</style>
+ <div class="adslot_1">
+<ins class="adsbygoogle adslot_1"
+    style="display:inline-block;"
+    data-ad-client="ca-pub-3011137288258947"
+     data-ad-slot="7784189666"	
+     data-full-width-responsive="true">
+	 </ins>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+                <!-- <div class="reklam"></div>
+                <div class="rightHeader"></div>  -->    
+                <div class="navTop">
+                    <nav>
+                        <ul class="topNavi">               
+                            <li><a class="go" onclick="perform()">Выполнить &raquo;</a></li>                           
+                        </ul>
+                    </nav>
+                </div>   
+                <!-- <div class="clearboth">
+                </div> -->
+            </div>
+        </div>   
+    </header>     
+    <div id="mainContainer">    
+        <div id="leftPanel" class="leftPanel">      
+<div class="toolBar">
+        <div class="toolWidget toolBtn" role="button" aria-label="Bold">
+            <button id="boldBtn_fieldCode" onclick="insertTag('fieldCode', 0);" title="Полужирный">B</button>   
+        </div>
+        <div class="toolWidget toolBtn" role="button" aria-label="Italic">
+            <button id="italicBtn_fieldCode" onclick="insertTag('fieldCode', 1);" title="Курсив">I</button>
+        </div>
+        <div class="toolWidget toolBtn" role="button" aria-label="Underline">
+            <button id="underBtn_fieldCode" onclick="insertTag('fieldCode', 2);" title="Подчеркивание">U</button>
+        </div>        
+        <div id="btn_formats" class="toolWidget toolBtn" role="button" aria-haspopup="true">
+            <button onclick="openBar('formats');" title="Форматирование"><span>Формат</span> <i class="btnCaret"></i></button>
+    <script type="text/javascript">formatBar('fieldCode');</script>    
+        </div>        
+        <div id="btn_markLists" class="toolWidget toolBtn splitBtn" role="button" aria-label="Bullet list" aria-haspopup="true">
+            <button onclick="insertList('fieldCode', getListNum('markLists'));" title="Маркированный список"><i class="icon-list-bullet"></i></button>
+            <button onclick="openBar('markLists');" class="openBtn"> <i class="btnCaret"></i></button>
+            <script type="text/javascript">markListBar('fieldCode');</script>
+        </div>        
+        <div id="btn_numLists" class="toolWidget toolBtn splitBtn" role="button" aria-label="Numbered list" aria-haspopup="true">
+            <button onclick="insertList('fieldCode', getListNum('numLists'));" title="Нумерованный список"><i class="icon-list-numbered"></i></button>
+            <button onclick="openBar('numLists');" class="openBtn"> <i class="btnCaret"></i></button>
+            <script type="text/javascript">numListBar('fieldCode');</script>
+        </div>       
+        <div class="toolWidget toolBtn" role="button" aria-label="Insert link">
+            <button onclick="edInsertLink('fieldCode', 18);" title="Вставить ссылку"><i class="icon-link"></i></button>
+        </div>
+        <div class="toolWidget toolBtn" role="button" aria-label="Insert image">
+            <button onclick="edInsertImage('fieldCode', 4);" title="Вставить изображение"><i class="icon-picture"></i></button>
+        </div>                  
+        <div id="btn_colors" class="toolWidget toolBtn splitBtn colorBtn" role="button" aria-haspopup="true" aria-label="Text color">
+            <button title="Цвет текста" onclick="insertColor('fieldCode', getColorNum(1), 1);"><i class="icon-font"></i><span  class="previewBtn"></span></button>
+            <button class="openBtn" onclick="openBar('colors')"> <i class="btnCaret"></i></button>
+            <script type="text/javascript">colorBar('fieldCode');</script>
+        </div>
+        <div id="btn_bgcolors" class="toolWidget toolBtn splitBtn colorBtn" role="button" aria-haspopup="true" aria-label="Background color" >
+            <button title="Цвет фона" onclick="insertColor('fieldCode', getColorNum(2), 2);"><i class="icon-bgfont"></i><span class="previewBtn"></span></button>
+            <button class="openBtn" onclick="openBar('bgcolors')"> <i class="btnCaret"></i></button>
+            <script type="text/javascript">bgColorBar('fieldCode');</script>
+        </div>
+        <div id="btn_tables" class="toolWidget toolBtn" role="button" aria-label="Table" aria-haspopup="true">
+            <button onclick="openBar('tables')" title="Таблица"><i class="icon-table"></i> <i class="btnCaret"></i></button>
+            <script type="text/javascript">tableBar('fieldCode');</script>
+        </div>
+        <div class="toolWidget toolBtn" role="button">
+            <button onclick="insertLorem('fieldCode');" title=""><span>Назад</span></button>
+        </div>
+        <div class="toolWidget toolBtn" role="button">
+            <button onclick="edInsertForm('fieldCode');" title=""><span>Форма</span></button>
+        </div>         
+  </div>   
+<div id="textarea">
+<div id="textareaWrapper">
+<div id="codePaint"></div>
+<textarea autocomplete="off" id="fieldCode" wrap="logical" spellcheck="false"><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Заголовок страницы</title>
+</head>
+  <body>
+    <h1>Это заголовок</h1>
+    <p>Это параграф</p>
+    <p>Discord: Esc#2164</p>
+  </body>
+</html>
+</textarea>                           
+</div> 
+</div>        
+</div>       
+<div class="delimiter"></div>
+<div id="rightPanel" class="rightPanel">
+            <div class="rightBar">                           
+                   <div onclick = "cleanTextarea();" class="cleanBtn" ><i class="icon-eraser"></i>
+                        <span id="cleanButtonText">Очистить</span>
+                    </div>                            
+            </div>           
+<div id="iframe" class="iframeDimens">        
+    <div id="iframeWrap"></div>         
+</div>                  
+</div> 
+        <!-- <div class="klirfix"></div>      -->  
+        <!-- <div class="clearboth"></div>         -->
+        <footer>            
+                <div>Онлайн редактор v0.0.1<script type="text/javascript"></script></div> 
+				
+        </footer>
+    </div>
+       
+<script>
+perform()
+</script>
+</body>
+</html>
